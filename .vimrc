@@ -67,7 +67,7 @@ let NERDTreeMapHelp='Z'       " Free up the ? search command.
 let NERDTreeShowHidden=1      " Show hidden files.
 let NERDTreeNaturalSort=1     " Sort node in natural order.
 let NERDTreeSortHiddenFirst=1 " Show hidden file first.
-let NERDTreeIgnore=['\.git$', '.DS_Store', 'Thumbs.db', 'desktop.ini']
+let NERDTreeIgnore=['\.swp', '\.git$', '.DS_Store', 'Thumbs.db', 'desktop.ini']
 nnoremap <silent> <Leader>n :NERDTreeToggle<CR>
 nnoremap <silent> <Leader>t :NERDTreeFind<CR>
 
