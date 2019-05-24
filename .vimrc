@@ -2,9 +2,6 @@
 " VIM-PLUG SET UP
 " ====================================================================================================
 
-" Ale need this set before loading ale.
-let g:ale_completion_enabled=1
-
 " Specify a directory for plugins.
 " - Avoid using standard Vim directory names like 'plugin'.
 call plug#begin('~/.vim/plugged')
