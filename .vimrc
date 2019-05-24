@@ -170,9 +170,3 @@ nnoremap <C-h> 6zh
 nnoremap <C-j> 4<C-e>
 nnoremap <C-k> 4<C-y>
 nnoremap <C-l> 6zl
-
-" Save.
-nnoremap <C-s> :update<CR>
-
-" Quit.
-nnoremap <C-q> :q<cr>
