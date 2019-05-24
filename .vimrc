@@ -85,7 +85,7 @@ let g:ale_linters={
 let g:ale_html_htmlhint_options='--config '.$HOME.'/.vim/.htmlhintrc.json'
 let g:ale_php_langserver_executable=$HOME.'/.vim/vendor/bin/php-language-server.php'
 nnoremap <silent> <Leader>d :ALEGoToDefinition<CR>
-nnoremap <silent> <Leader>dt :ALEGoToTypeDefinition<CR>
+nnoremap <silent> <Leader>D :ALEGoToTypeDefinition<CR>
 nnoremap <silent> <Leader>r :ALEFindReferences<CR>
 nnoremap <silent> <Leader>h :ALEHover<CR>
 
