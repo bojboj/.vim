@@ -2,7 +2,7 @@
 " VIM-PLUG SET UP
 " ====================================================================================================
 
-" Ale need this set before loading of the ale plugin.
+" Ale need this set before loading ale.
 let g:ale_completion_enabled=1
 
 " Specify a directory for plugins.
@@ -10,16 +10,16 @@ let g:ale_completion_enabled=1
 call plug#begin('~/.vim/plugged')
 
 " Functional.
-Plug 'scrooloose/nerdtree'                                                         " File browser.
-Plug 'Xuyuanp/nerdtree-git-plugin'                                                 " Git support for nerdtree.
-Plug 'tpope/vim-fugitive'                                                          " Git wrapper.
-Plug 'airblade/vim-gitgutter'                                                      " Git support in gutter.
-Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all'}                    " Fuzzy finder.
-Plug 'junegunn/fzf.vim'                                                            " FZF commands for vim.
-Plug 'mileszs/ack.vim'                                                             " Search tool.
-Plug 'w0rp/ale'                                                                    " Asynchronous lint engine and language server client.
-Plug 'tpope/vim-surround'                                                          " Vim surround.
-Plug 'tpope/vim-repeat'                                                            " Enable repeating supported plugin maps with '.'.
+Plug 'scrooloose/nerdtree'                                      " File browser.
+Plug 'Xuyuanp/nerdtree-git-plugin'                              " Git support for nerdtree.
+Plug 'tpope/vim-fugitive'                                       " Git wrapper.
+Plug 'airblade/vim-gitgutter'                                   " Git support in gutter.
+Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all'} " Fuzzy finder.
+Plug 'junegunn/fzf.vim'                                         " FZF commands for vim.
+Plug 'mileszs/ack.vim'                                          " Search tool.
+Plug 'w0rp/ale'                                                 " Asynchronous lint engine and language server client.
+Plug 'tpope/vim-surround'                                       " Vim surround.
+Plug 'tpope/vim-repeat'                                         " Enable repeating supported plugin maps with '.'.
 
 " Visual.
 Plug 'morhetz/gruvbox'         " Gruvbox.
@@ -31,10 +31,11 @@ Plug 'vim-airline/vim-airline' " Status line.
 call plug#end()
 
 " ====================================================================================================
-" PLUGIN SETUPS
+" PLUGINS SET UP
 " ====================================================================================================
 
 " Gruvbox.
+syntax enable
 set termguicolors
 set background=dark
 let g:gruvbox_italic=0
@@ -71,6 +72,7 @@ nnoremap <silent> <Leader>n :NERDTreeToggle<CR>
 nnoremap <silent> <Leader>t :NERDTreeFind<CR>
 
 " Ale.
+set completeopt=menu,menuone,noselect,noinsert " Fix autocomplete behavior.
 set omnifunc=ale#completion#OmniFunc
 let g:ale_completion_max_suggestions=10
 let g:airline#extensions#ale#enabled=1
@@ -90,34 +92,32 @@ nnoremap <silent> <Leader>r :ALEFindReferences<CR>
 nnoremap <silent> <Leader>h :ALEHover<CR>
 
 " ====================================================================================================
-" GENERAL SETUPS
+" GENERAL SET UP
 " ====================================================================================================
-syntax enable                                  " Enabled syntax.
-set hidden                                     " Enabled buffer to be hidden.
-set updatetime=1000                            " 1 second update time for plugins and events that rely on it.
-set number                                     " Enabled number line.
-set mouse=a                                    " Enabled mouse support.
-set clipboard=unnamed                          " Allow clipboard copy and paste.
-set bs=indent,eol,start                        " Allow backspacing over everything.
-set autoindent                                 " Enable auto-indentation.
-set tabstop=4                                  " No. of spaces for tab in file.
-set shiftwidth=4                               " No. of spaces for step in autoindent.
-set softtabstop=4                              " No. of spaces for tab when editing.
-set expandtab                                  " Expand tabs into spaces.
-set smarttab                                   " Smart tabulation and backspace.
-set incsearch                                  " Highlight word while typing in search command.
-set hlsearch                                   " Highlight searched pattern.
-set ignorecase                                 " Ignore case when searching.
-set smartcase                                  " Case sensitive if searching with uppercase.
-set nobackup                                   " No backup.
-set nowritebackup                              " No write backup.
-set nowrap                                     " No word wraping.
-set scrolloff=4                                " Show some context when scrolling.
-set completeopt=menu,menuone,noselect,noinsert " Auto complete setting.
-set nocompatible                               " Needed for viminfo setting to work.
-set viminfo=!,'100,<50,s10,h                   " Viminfo settings.
+set hidden                   " Enabled buffer to be hidden.
+set updatetime=1000          " 1 second update time for plugins and events that rely on it.
+set number                   " Enabled number line.
+set mouse=a                  " Enabled mouse support.
+set clipboard=unnamed        " Allow clipboard copy and paste.
+set bs=indent,eol,start      " Allow backspacing over everything.
+set autoindent               " Enable auto-indentation.
+set tabstop=4                " No. of spaces for tab in file.
+set shiftwidth=4             " No. of spaces for step in autoindent.
+set softtabstop=4            " No. of spaces for tab when editing.
+set expandtab                " Expand tabs into spaces.
+set smarttab                 " Smart tabulation and backspace.
+set incsearch                " Highlight word while typing in search command.
+set hlsearch                 " Highlight searched pattern.
+set ignorecase               " Ignore case when searching.
+set smartcase                " Case sensitive if searching with uppercase.
+set nobackup                 " No backup.
+set nowritebackup            " No write backup.
+set nowrap                   " No word wraping.
+set scrolloff=4              " Show some context when scrolling.
+set nocompatible             " Needed for viminfo setting to work.
+set viminfo=!,'100,<50,s10,h " Viminfo settings.
 
-" Change cursor when in insert mode. 
+" Change cursor when in insert mode.
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_SR = "\<Esc>]50;CursorShape=2\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
@@ -148,7 +148,7 @@ augroup END
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
-" Fix syntax error.
+" Fix syntax.
 nnoremap <Leader>z :syntax sync fromstart<CR>
 
 " Remove trailing white spaces.
