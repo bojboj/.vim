@@ -1,0 +1,9 @@
+{
+  "license": "UNLICENSED",
+  "dependencies": {
+    "eslint": "^4.19.1",
+    "htmlhint": "^0.9.13",
+    "jsonlint": "^1.6.3",
+    "less": "^3.0.4"
+  }
+}
