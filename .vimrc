@@ -19,7 +19,6 @@ Plug 'tpope/vim-surround'                                       " Vim surround.
 Plug 'tpope/vim-repeat'                                         " Enable repeating supported plugin maps with '.'.
 
 " Visual.
-Plug 'morhetz/gruvbox'         " Gruvbox.
 Plug 'sheerun/vim-polyglot'    " Language syntax package.
 Plug 'Yggdroot/indentLine'     " Indent line guide.
 Plug 'vim-airline/vim-airline' " Status line.
@@ -30,15 +29,6 @@ call plug#end()
 " ====================================================================================================
 " PLUGINS SET UP
 " ====================================================================================================
-
-" Gruvbox.
-syntax enable
-set termguicolors
-set background=dark
-let g:gruvbox_italic=0
-let gruvbox_sign_column='bg0'
-let g:gruvbox_number_column='bg1'
-colorscheme gruvbox
 
 " FZF vim.
 nnoremap <Leader>o :GFiles<CR>
@@ -114,6 +104,8 @@ set nowrap                   " No word wraping.
 set scrolloff=4              " Show some context when scrolling.
 set nocompatible             " Needed for viminfo setting to work.
 set viminfo=!,'100,<50,s10,h " Viminfo settings.
+
+syntax enable
 
 " Change cursor when in insert mode.
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
