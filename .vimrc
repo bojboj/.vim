@@ -84,8 +84,8 @@ let g:ale_linters={
 \}
 let g:ale_html_htmlhint_options='--config '.$HOME.'/.vim/.htmlhintrc.json'
 let g:ale_php_langserver_executable=$HOME.'/.vim/vendor/bin/php-language-server.php'
-nnoremap <silent> <Leader>d :ALEGoToDefinition<CR>
-nnoremap <silent> <Leader>D :ALEGoToTypeDefinition<CR>
+nnoremap <silent> <Leader>f :ALEGoToDefinition<CR>
+nnoremap <silent> <Leader>F :ALEGoToTypeDefinition<CR>
 nnoremap <silent> <Leader>r :ALEFindReferences<CR>
 nnoremap <silent> <Leader>h :ALEHover<CR>
 
@@ -142,11 +142,7 @@ augroup CheckFileDisk
     autocmd CursorHold,CursorHoldI * checktime
 augroup END
 
-" Tab for autocomplete cycle.
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
-" Fix syntax.
+" Fix syntax highlight.
 nnoremap <Leader>z :syntax sync fromstart<CR>
 
 " Remove trailing white spaces.
@@ -162,7 +158,11 @@ nnoremap <silent> <Leader><space> :noh<CR>
 nnoremap * *``
 nnoremap # #``
 
-" For quick vertical and horizontal navigation.
+" CTRL-j and CTRL-k for autocomplete navigation.
+inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
+inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
+
+" CTRL-h, CTRL-j, CTRL-k, CTRL-l for quick vertical and horizontal navigation.
 nnoremap <C-h> 6zh
 nnoremap <C-j> 4<C-e>
 nnoremap <C-k> 4<C-y>
