@@ -63,7 +63,6 @@ nnoremap <silent> <Leader>t :NERDTreeFind<CR>
 " Ale.
 set completeopt=menu,menuone,noselect,noinsert " Fix autocomplete behavior.
 set omnifunc=ale#completion#OmniFunc
-let g:ale_completion_max_suggestions=10
 let g:ale_linters_explicit=1
 let g:ale_linters={
     \'html': ['htmlhint'],
