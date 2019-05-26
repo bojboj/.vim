@@ -1,7 +1,10 @@
+" Load vim default.
+unlet! skip_defaults_vim
+silent! source $VIMRUNTIME/defaults.vim
+
 " ====================================================================================================
 " VIM-PLUG SET UP
 " ====================================================================================================
-
 " Specify a directory for plugins.
 " - Avoid using standard Vim directory names like 'plugin'.
 call plug#begin('~/.vim/plugged')
@@ -9,19 +12,19 @@ call plug#begin('~/.vim/plugged')
 " Functional.
 Plug 'scrooloose/nerdtree'                                      " File browser.
 Plug 'Xuyuanp/nerdtree-git-plugin'                              " Git support for nerdtree.
-Plug 'tpope/vim-fugitive'                                       " Git wrapper.
-Plug 'airblade/vim-gitgutter'                                   " Git support in gutter.
 Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all'} " Fuzzy finder.
 Plug 'junegunn/fzf.vim'                                         " FZF commands for vim.
 Plug 'mileszs/ack.vim'                                          " Search tool.
 Plug 'w0rp/ale'                                                 " Asynchronous lint engine and language server client.
+Plug 'airblade/vim-gitgutter'                                   " Git support in gutter.
+Plug 'tpope/vim-fugitive'                                       " Git wrapper.
 Plug 'tpope/vim-surround'                                       " Vim surround.
 Plug 'tpope/vim-repeat'                                         " Enable repeating supported plugin maps with '.'.
 
 " Visual.
-Plug 'sheerun/vim-polyglot'    " Language syntax package.
-Plug 'Yggdroot/indentLine'     " Indent line guide.
-Plug 'vim-airline/vim-airline' " Status line.
+Plug 'junegunn/seoul256.vim' " Color scheme.
+Plug 'sheerun/vim-polyglot'  " Language syntax package.
+Plug 'Yggdroot/indentLine'   " Indent line guide.
 
 " Initialize plugin system.
 call plug#end()
@@ -29,6 +32,11 @@ call plug#end()
 " ====================================================================================================
 " PLUGINS SET UP
 " ====================================================================================================
+" Seoul256
+colo seoul256
+
+" Vim fugitive.
+set statusline=%<%f\ %h%m%r%{FugitiveStatusline()}%=%-14.(%l,%c%V%)\ %P\ %L
 
 " FZF vim.
 nnoremap <Leader>o :GFiles<CR>
@@ -43,12 +51,6 @@ let g:ackprg='ag --vimgrep'
 nnoremap <Leader>a :Ack!<Space>
 nnoremap <Leader>A :AckFile!<Space>
 
-" Indentline.
-augroup IndentLineAu
-    autocmd!
-    autocmd FileType help,nerdtree IndentLinesDisable
-augroup END
-
 " Nerdtree.
 let NERDTreeMapHelp='Z'       " Free up the ? search command.
 let NERDTreeShowHidden=1      " Show hidden files.
@@ -62,7 +64,6 @@ nnoremap <silent> <Leader>t :NERDTreeFind<CR>
 set completeopt=menu,menuone,noselect,noinsert " Fix autocomplete behavior.
 set omnifunc=ale#completion#OmniFunc
 let g:ale_completion_max_suggestions=10
-let g:airline#extensions#ale#enabled=1
 let g:ale_linters_explicit=1
 let g:ale_linters={
     \'html': ['htmlhint'],
@@ -85,27 +86,20 @@ nnoremap <silent> <Leader>h :ALEHover<CR>
 set hidden                   " Enabled buffer to be hidden.
 set updatetime=1000          " 1 second update time for plugins and events that rely on it.
 set number                   " Enabled number line.
-set mouse=a                  " Enabled mouse support.
 set clipboard=unnamed        " Allow clipboard copy and paste.
-set bs=indent,eol,start      " Allow backspacing over everything.
 set autoindent               " Enable auto-indentation.
 set tabstop=4                " No. of spaces for tab in file.
 set shiftwidth=4             " No. of spaces for step in autoindent.
 set softtabstop=4            " No. of spaces for tab when editing.
 set expandtab                " Expand tabs into spaces.
 set smarttab                 " Smart tabulation and backspace.
-set incsearch                " Highlight word while typing in search command.
 set hlsearch                 " Highlight searched pattern.
 set ignorecase               " Ignore case when searching.
 set smartcase                " Case sensitive if searching with uppercase.
 set nobackup                 " No backup.
 set nowritebackup            " No write backup.
 set nowrap                   " No word wraping.
-set scrolloff=4              " Show some context when scrolling.
-set nocompatible             " Needed for viminfo setting to work.
 set viminfo=!,'100,<50,s10,h " Viminfo settings.
-
-syntax enable
 
 " Change cursor when in insert mode.
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
@@ -121,10 +115,6 @@ augroup GeneralAu
 
     " JSON general setups.
     autocmd Filetype json setlocal tabstop=2 shiftwidth=2 softtabstop=2
-
-    " Keep cursor position when switching buffers.
-    execute 'autocmd FileType vim,html,javascript,json,less,php,twig,yml,sql autocmd BufLeave <buffer> let b:winview = winsaveview()'
-    execute 'autocmd FileType vim,html,javascript,json,less,php,twig,yml,sql autocmd BufEnter <buffer> if(exists("b:winview")) | call winrestview(b:winview) | endif'
 augroup END
 
 " Reload file that was changed outside of vim.
