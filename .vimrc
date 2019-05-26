@@ -36,6 +36,7 @@ call plug#end()
 colo seoul256
 
 " Vim fugitive.
+set laststatus=2
 set statusline=%<%f\ %h%m%r%{FugitiveStatusline()}%=%-14.(%l,%c%V%)\ %P\ %L
 
 " FZF vim.
