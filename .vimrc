@@ -3,7 +3,7 @@ unlet! skip_defaults_vim
 silent! source $VIMRUNTIME/defaults.vim
 
 " ====================================================================================================
-" VIM-PLUG SET UP
+" VIM-PLUG SETUP
 " ====================================================================================================
 " Specify a directory for plugins.
 " - Avoid using standard Vim directory names like 'plugin'.
@@ -30,9 +30,9 @@ Plug 'Yggdroot/indentLine'   " Indent line guide.
 call plug#end()
 
 " ====================================================================================================
-" PLUGINS SET UP
+" PLUGINS SETUP
 " ====================================================================================================
-" Seoul256
+" Seoul256.
 colo seoul256
 
 " Vim fugitive.
@@ -80,7 +80,7 @@ nnoremap <silent> <Leader>r :ALEFindReferences<CR>
 nnoremap <silent> <Leader>h :ALEHover<CR>
 
 " ====================================================================================================
-" GENERAL SET UP
+" GENERAL SETUP
 " ====================================================================================================
 set hidden                   " Enabled buffer to be hidden.
 set updatetime=1000          " 1 second update time for plugins and events that rely on it.
