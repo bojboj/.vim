@@ -66,7 +66,11 @@ let g:ale_linters={
     \'php': ['php', 'langserver'],
     \'twig': ['htmlhint'],
 \}
+let g:ale_html_htmlhint_executable=$HOME.'/.vim/node_modules/.bin/htmlhint'
 let g:ale_html_htmlhint_options='--config '.$HOME.'/.vim/.htmlhintrc.json'
+let g:ale_javascript_eslint_executable=$HOME.'/.vim/node_modules/.bin/eslint'
+let g:ale_json_jsonlint_executable=$HOME.'/.vim/node_modules/.bin/jsonlint'
+let g:ale_less_lessc_executable=$HOME.'/.vim/node_modules/.bin/lessc'
 let g:ale_php_langserver_executable=$HOME.'/.vim/vendor/bin/php-language-server.php'
 nnoremap <silent> <Leader>f :ALEGoToDefinition<CR>
 nnoremap <silent> <Leader>F :ALEGoToTypeDefinition<CR>
