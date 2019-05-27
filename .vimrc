@@ -14,7 +14,6 @@ Plug 'scrooloose/nerdtree'                                      " File browser.
 Plug 'Xuyuanp/nerdtree-git-plugin'                              " Git support for nerdtree.
 Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all'} " Fuzzy finder.
 Plug 'junegunn/fzf.vim'                                         " FZF commands for vim.
-Plug 'mileszs/ack.vim'                                          " Search tool.
 Plug 'w0rp/ale'                                                 " Asynchronous lint engine and language server client.
 Plug 'airblade/vim-gitgutter'                                   " Git support in gutter.
 Plug 'tpope/vim-fugitive'                                       " Git wrapper.
@@ -45,12 +44,6 @@ nnoremap <Leader>O :Files<CR>
 nnoremap <Leader>b :GFiles?<CR>
 nnoremap <Leader>B :Buffers<CR>
 nnoremap <Leader>w :Windows<CR>
-
-" Ack vim Ag.
-set shellpipe=&>
-let g:ackprg='ag --vimgrep'
-nnoremap <Leader>a :Ack!<Space>
-nnoremap <Leader>A :AckFile!<Space>
 
 " Nerdtree.
 let NERDTreeMapHelp='Z'       " Free up the ? search command.
