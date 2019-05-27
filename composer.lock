@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d2ff5bd056d3e1705e00b9e7f1257e4b",
+    "hash": "4596bf0acfa0d897820472ffac1856d1",
     "content-hash": "1ec03a0a090c68723147e6d5d89e1320",
     "packages": [
         {
@@ -217,12 +217,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/JetBrains/phpstorm-stubs.git",
-                "reference": "4162683706879a4e27aad5d196eb11e058c10eb6"
+                "reference": "af4d1b9cf3ed4dd5a771da060b3f9cf55221d747"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/JetBrains/phpstorm-stubs/zipball/4162683706879a4e27aad5d196eb11e058c10eb6",
-                "reference": "4162683706879a4e27aad5d196eb11e058c10eb6",
+                "url": "https://api.github.com/repos/JetBrains/phpstorm-stubs/zipball/af4d1b9cf3ed4dd5a771da060b3f9cf55221d747",
+                "reference": "af4d1b9cf3ed4dd5a771da060b3f9cf55221d747",
                 "shasum": ""
             },
             "require-dev": {
@@ -248,7 +248,7 @@
                 "stubs",
                 "type"
             ],
-            "time": "2019-05-22 09:07:58"
+            "time": "2019-05-24 14:53:26"
         },
         {
             "name": "microsoft/tolerant-php-parser",
