@@ -43,10 +43,8 @@ nnoremap <Leader>o :GFiles<CR>
 nnoremap <Leader>O :Files<CR>
 nnoremap <Leader>b :GFiles?<CR>
 nnoremap <Leader>B :Buffers<CR>
-nnoremap <Leader>w :Windows<CR>
 
 " Nerdtree.
-let NERDTreeMapHelp='Z'       " Free up the ? search command.
 let NERDTreeShowHidden=1      " Show hidden files.
 let NERDTreeNaturalSort=1     " Sort node in natural order.
 let NERDTreeSortHiddenFirst=1 " Show hidden file first.
@@ -126,9 +124,6 @@ nnoremap <Leader>z :syntax sync fromstart<CR>
 
 " Remove trailing white spaces.
 nnoremap <silent> <Leader>x :%s/\s\+$//e<CR>
-
-" Close quickfix and preview window.
-nnoremap <silent> <Leader>c :ccl<CR><C-w>z
 
 " Clear search.
 nnoremap <silent> <Leader><space> :noh<CR>
