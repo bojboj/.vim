@@ -132,9 +132,9 @@ nnoremap <silent> <Leader><space> :noh<CR>
 nnoremap * *``
 nnoremap # #``
 
-" CTRL-j and CTRL-k for autocomplete navigation.
-inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
-inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
+" Tab for autocomplete navigation.
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 " CTRL-h, CTRL-j, CTRL-k, CTRL-l for quick vertical and horizontal navigation.
 nnoremap <C-h> 6zh
