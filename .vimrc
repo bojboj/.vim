@@ -62,7 +62,6 @@ let g:ale_linters={
     \'json': ['jsonlint'],
     \'less': ['lessc'],
     \'php': ['php', 'langserver'],
-    \'twig': ['htmlhint'],
 \}
 let g:ale_html_htmlhint_executable=$HOME.'/.vim/node_modules/.bin/htmlhint'
 let g:ale_html_htmlhint_options='--config '.$HOME.'/.vim/.htmlhintrc.json'
