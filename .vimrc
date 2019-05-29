@@ -73,6 +73,8 @@ nnoremap <silent> <Leader>f :ALEGoToDefinition<CR>
 nnoremap <silent> <Leader>F :ALEGoToTypeDefinition<CR>
 nnoremap <silent> <Leader>r :ALEFindReferences<CR>
 nnoremap <silent> <Leader>h :ALEHover<CR>
+nnoremap <silent> ]x :ALENext<CR>
+nnoremap <silent> [x :ALEPrevious<CR>
 
 " ====================================================================================================
 " GENERAL SETUP
