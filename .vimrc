@@ -102,22 +102,15 @@ let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_SR = "\<Esc>]50;CursorShape=2\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
-" General auto command.
-augroup GeneralAu
+set autoread
+augroup VimrcAutoCommand
     autocmd!
 
-    " Auto save.
-    autocmd BufLeave,BufUnload,BufDelete * silent! :update
+    " Reload file that was changed outside of vim.
+    autocmd CursorHold,CursorHoldI * checktime
 
     " JSON general setups.
     autocmd Filetype json setlocal tabstop=2 shiftwidth=2 softtabstop=2
-augroup END
-
-" Reload file that was changed outside of vim.
-set autoread
-augroup CheckFileDisk
-    autocmd!
-    autocmd CursorHold,CursorHoldI * checktime
 augroup END
 
 " Fix syntax highlight.
@@ -132,10 +125,6 @@ nnoremap <silent> <Leader><space> :noh<CR>
 " Search word in cursor without moving.
 nnoremap * *``
 nnoremap # #``
-
-" Tab for autocomplete navigation.
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 " CTRL-h, CTRL-j, CTRL-k, CTRL-l for quick vertical and horizontal navigation.
 nnoremap <C-h> 6zh
