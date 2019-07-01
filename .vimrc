@@ -19,6 +19,7 @@ Plug 'airblade/vim-gitgutter'                                   " Git support in
 Plug 'tpope/vim-fugitive'                                       " Git wrapper.
 Plug 'tpope/vim-surround'                                       " Vim surround.
 Plug 'tpope/vim-repeat'                                         " Enable repeating supported plugin maps with '.'.
+Plug 'editorconfig/editorconfig-vim'                            " For defining coding styles per project.
 
 " Visual.
 Plug 'junegunn/seoul256.vim' " Color scheme.
@@ -37,6 +38,10 @@ colo seoul256
 " Vim fugitive.
 set laststatus=2
 set statusline=%<%f\ %h%m%r%{FugitiveStatusline()}%=%-14.(%l,%c%V%)\ %P\ %L
+
+" Editor config.
+" To ensure that this plugin works well with Tim Pope's fugitive.
+let g:EditorConfig_exclude_patterns = ['fugitive://.\*']
 
 " FZF vim.
 nnoremap <Leader>o :GFiles<CR>
@@ -80,38 +85,21 @@ nnoremap <silent> [x :ALEPrevious<CR>
 " GENERAL SETUP
 " ====================================================================================================
 set hidden                   " Enabled buffer to be hidden.
-set updatetime=1000          " 1 second update time for plugins and events that rely on it.
 set number                   " Enabled number line.
-set clipboard=unnamed        " Allow clipboard copy and paste.
-set autoindent               " Enable auto-indentation.
-set tabstop=4                " No. of spaces for tab in file.
-set shiftwidth=4             " No. of spaces for step in autoindent.
-set softtabstop=4            " No. of spaces for tab when editing.
-set expandtab                " Expand tabs into spaces.
-set smarttab                 " Smart tabulation and backspace.
 set hlsearch                 " Highlight searched pattern.
 set ignorecase               " Ignore case when searching.
 set smartcase                " Case sensitive if searching with uppercase.
 set nobackup                 " No backup.
 set nowritebackup            " No write backup.
 set nowrap                   " No word wraping.
+set updatetime=1000          " 1 second update time for plugins and events that rely on it.
+set clipboard=unnamed        " Allow clipboard copy and paste.
 set viminfo=!,'100,<50,s10,h " Viminfo settings.
 
 " Change cursor when in insert mode.
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_SR = "\<Esc>]50;CursorShape=2\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-
-set autoread
-augroup VimrcAutoCommand
-    autocmd!
-
-    " Reload file that was changed outside of vim.
-    autocmd CursorHold,CursorHoldI * checktime
-
-    " JSON general setups.
-    autocmd Filetype json setlocal tabstop=2 shiftwidth=2 softtabstop=2
-augroup END
 
 " Fix syntax highlight.
 nnoremap <Leader>z :syntax sync fromstart<CR>
