@@ -1,3 +1,5 @@
+# Personal code style configuration.
+
 root = true
 
 [*]
