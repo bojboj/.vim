@@ -9,6 +9,8 @@ npm install
 echo ""
 
 cd ~
+mkdir .vimtmp
+
 rm .vimrc
 ln -s .vim/.vimrc .vimrc
 

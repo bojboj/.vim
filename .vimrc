@@ -89,11 +89,10 @@ set number                   " Enabled number line.
 set hlsearch                 " Highlight searched pattern.
 set ignorecase               " Ignore case when searching.
 set smartcase                " Case sensitive if searching with uppercase.
-set nobackup                 " No backup.
-set nowritebackup            " No write backup.
 set nowrap                   " No word wraping.
 set updatetime=1000          " 1 second update time for plugins and events that rely on it.
 set clipboard=unnamed        " Allow clipboard copy and paste.
+set dir=~/.vimtmp             " Put *.swp files into .vimtmp directory.
 set viminfo=!,'100,<50,s10,h " Viminfo settings.
 
 " Change cursor when in insert mode.
