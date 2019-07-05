@@ -85,6 +85,7 @@ nnoremap <silent> [x :ALEPrevious<CR>
 " GENERAL SETUP
 " ====================================================================================================
 set hidden                   " Enabled buffer to be hidden.
+set autoread                 " Autoload file changes that was done outside of vim.
 set number                   " Enabled number line.
 set hlsearch                 " Highlight searched pattern.
 set ignorecase               " Ignore case when searching.
@@ -93,7 +94,7 @@ set nowrap                   " No word wraping.
 set updatetime=1000          " 1 second update time for plugins and events that rely on it.
 set clipboard=unnamed        " Allow clipboard copy and paste.
 set dir=~/.vimtmp            " Put *.swp files into .vimtmp directory.
-set viminfo=!,'100,<50,s10,h " Viminfo settings.
+set viminfo^=!               " Viminfo settings.
 
 " Change cursor when in insert mode.
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
