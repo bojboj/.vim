@@ -12,19 +12,17 @@ call plug#begin('~/.vim/plugged')
 " Functional.
 Plug 'scrooloose/nerdtree'                                      " File browser.
 Plug 'Xuyuanp/nerdtree-git-plugin'                              " Git support for nerdtree.
+Plug 'airblade/vim-gitgutter'                                   " Git support in gutter.
+Plug 'tpope/vim-fugitive'                                       " Git wrapper.
 Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all'} " Fuzzy finder.
 Plug 'junegunn/fzf.vim'                                         " FZF commands for vim.
 Plug 'w0rp/ale'                                                 " Asynchronous lint engine and language server client.
-Plug 'airblade/vim-gitgutter'                                   " Git support in gutter.
-Plug 'tpope/vim-fugitive'                                       " Git wrapper.
-Plug 'tpope/vim-surround'                                       " Vim surround.
-Plug 'tpope/vim-repeat'                                         " Enable repeating supported plugin maps with '.'.
-Plug 'editorconfig/editorconfig-vim'                            " For defining coding styles per project.
 
 " Visual.
-Plug 'junegunn/seoul256.vim' " Color scheme.
-Plug 'sheerun/vim-polyglot'  " Language syntax package.
-Plug 'Yggdroot/indentLine'   " Indent line guide.
+Plug 'editorconfig/editorconfig-vim' " For defining coding styles per project.
+Plug 'junegunn/seoul256.vim'         " Color scheme.
+Plug 'sheerun/vim-polyglot'          " Language syntax package.
+Plug 'Yggdroot/indentLine'           " Indent line guide.
 
 " Initialize plugin system.
 call plug#end()
