@@ -5,8 +5,6 @@ silent! source $VIMRUNTIME/defaults.vim
 " ====================================================================================================
 " VIM-PLUG SETUP
 " ====================================================================================================
-" Specify a directory for plugins.
-" - Avoid using standard Vim directory names like 'plugin'.
 call plug#begin('~/.vim/plugged')
 
 " Functional.
@@ -56,7 +54,7 @@ nnoremap <silent> <Leader>n :NERDTreeToggle<CR>
 nnoremap <silent> <Leader>t :NERDTreeFind<CR>
 
 " Ale.
-set completeopt=menu,menuone,noselect,noinsert " Fix autocomplete behavior.
+set completeopt=menu,menuone,preview,noselect,noinsert " Fix autocomplete behavior.
 set omnifunc=ale#completion#OmniFunc
 let g:ale_linters_explicit=1
 let g:ale_linters={
