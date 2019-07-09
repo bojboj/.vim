@@ -1,12 +1,6 @@
-" Load vim default.
-unlet! skip_defaults_vim
-silent! source $VIMRUNTIME/defaults.vim
-
 " ====================================================================================================
 " VIM-PLUG SETUP
 " ====================================================================================================
-" Specify a directory for plugins.
-" - Avoid using standard Vim directory names like 'plugin'.
 call plug#begin('~/.vim/plugged')
 
 " Functional.
@@ -17,6 +11,7 @@ Plug 'tpope/vim-fugitive'                                       " Git wrapper.
 Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all'} " Fuzzy finder.
 Plug 'junegunn/fzf.vim'                                         " FZF commands for vim.
 Plug 'w0rp/ale'                                                 " Asynchronous lint engine and language server client.
+Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}     " Asynchronous completion.
 
 " Visual.
 Plug 'editorconfig/editorconfig-vim' " For defining coding styles per project.
@@ -55,8 +50,11 @@ let NERDTreeIgnore=['\.swp', '\.git$', '.DS_Store', 'Thumbs.db', 'desktop.ini']
 nnoremap <silent> <Leader>n :NERDTreeToggle<CR>
 nnoremap <silent> <Leader>t :NERDTreeFind<CR>
 
+" deoplete
+let g:deoplete#enable_at_startup=1
+
 " Ale.
-set completeopt=menu,menuone,noselect,noinsert " Fix autocomplete behavior.
+set completeopt=menu,menuone,preview,noselect,noinsert " Fix autocomplete behavior.
 set omnifunc=ale#completion#OmniFunc
 let g:ale_linters_explicit=1
 let g:ale_linters={
@@ -83,7 +81,6 @@ nnoremap <silent> [x :ALEPrevious<CR>
 " GENERAL SETUP
 " ====================================================================================================
 set hidden                   " Enabled buffer to be hidden.
-set autoread                 " Autoload file changes that was done outside of vim.
 set number                   " Enabled number line.
 set hlsearch                 " Highlight searched pattern.
 set ignorecase               " Ignore case when searching.
@@ -91,13 +88,6 @@ set smartcase                " Case sensitive if searching with uppercase.
 set nowrap                   " No word wraping.
 set updatetime=1000          " 1 second update time for plugins and events that rely on it.
 set clipboard=unnamed        " Allow clipboard copy and paste.
-set dir=~/.vimtmp            " Put *.swp files into .vimtmp directory.
-set viminfo^=!               " Viminfo settings.
-
-" Change cursor when in insert mode.
-let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-let &t_SR = "\<Esc>]50;CursorShape=2\x7"
-let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
 " Fix syntax highlight.
 nnoremap <Leader>z :syntax sync fromstart<CR>
