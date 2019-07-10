@@ -10,8 +10,8 @@ Plug 'airblade/vim-gitgutter'                                   " Git support in
 Plug 'tpope/vim-fugitive'                                       " Git wrapper.
 Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all'} " Fuzzy finder.
 Plug 'junegunn/fzf.vim'                                         " FZF commands for vim.
-Plug 'w0rp/ale'                                                 " Asynchronous lint engine and language server client.
 Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}     " Asynchronous completion.
+Plug 'w0rp/ale'                                                 " Asynchronous lint engine and language server client.
 
 " Visual.
 Plug 'editorconfig/editorconfig-vim' " For defining coding styles per project.
@@ -54,7 +54,7 @@ nnoremap <silent> <Leader>t :NERDTreeFind<CR>
 let g:deoplete#enable_at_startup=1
 
 " Ale.
-set completeopt=menu,menuone,preview,noselect,noinsert " Fix autocomplete behavior.
+set completeopt=menu,menuone,noselect,noinsert " Fix autocomplete behavior.
 set omnifunc=ale#completion#OmniFunc
 let g:ale_linters_explicit=1
 let g:ale_linters={
@@ -82,12 +82,13 @@ nnoremap <silent> [x :ALEPrevious<CR>
 " ====================================================================================================
 set hidden                   " Enabled buffer to be hidden.
 set number                   " Enabled number line.
-set hlsearch                 " Highlight searched pattern.
 set ignorecase               " Ignore case when searching.
 set smartcase                " Case sensitive if searching with uppercase.
 set nowrap                   " No word wraping.
 set updatetime=1000          " 1 second update time for plugins and events that rely on it.
 set clipboard=unnamed        " Allow clipboard copy and paste.
+set mouse=a                  " Mouse support.
+set scrolloff=5              " Show a few lines of context around the cursor.
 
 " Fix syntax highlight.
 nnoremap <Leader>z :syntax sync fromstart<CR>
