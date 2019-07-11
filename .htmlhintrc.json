@@ -15,11 +15,6 @@
   "id-unique": true,
   "inline-script-disabled": false,
   "inline-style-disabled": false,
-  "jshint": {
-    "laxbreak": true,
-    "undef": true,
-    "unused": true
-  },
   "space-tab-mixed-disabled": "space",
   "spec-char-escape": true,
   "src-not-empty": true,

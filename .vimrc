@@ -57,15 +57,17 @@ let g:deoplete#enable_at_startup=1
 set completeopt=menu,menuone,noselect,noinsert " Fix autocomplete behavior.
 set omnifunc=ale#completion#OmniFunc
 let g:ale_linters_explicit=1
+let g:ale_linter_aliases = {'html': ['html', 'javascript']}
 let g:ale_linters={
-    \'html': ['htmlhint'],
+    \'html': ['htmlhint', 'eslint'],
     \'javascript': ['eslint'],
     \'json': ['jsonlint'],
     \'less': ['lessc'],
     \'php': ['php', 'langserver'],
 \}
-let g:ale_html_htmlhint_executable=$HOME.'/.vim/node_modules/.bin/htmlhint'
 let g:ale_html_htmlhint_options='--config '.$HOME.'/.vim/.htmlhintrc.json'
+let g:ale_html_htmlhint_executable=$HOME.'/.vim/node_modules/.bin/htmlhint'
+let g:ale_javascript_eslint_options='--ext .js,.html --resolve-plugins-relative-to='.$HOME.'/.vim'
 let g:ale_javascript_eslint_executable=$HOME.'/.vim/node_modules/.bin/eslint'
 let g:ale_json_jsonlint_executable=$HOME.'/.vim/node_modules/.bin/jsonlint'
 let g:ale_less_lessc_executable=$HOME.'/.vim/node_modules/.bin/lessc'
