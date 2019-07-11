@@ -1,4 +1,3 @@
-# .vim
 Vim setup
 
 1. Clone this repo in ~ directory.
