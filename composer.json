@@ -5,6 +5,11 @@
     "felixfbecker/language-server": "*"
   },
   "scripts": {
-    "parse-stubs": "LanguageServer\\ComposerScripts::parseStubs"
+    "post-install-cmd": [
+      "LanguageServer\\ComposerScripts::parseStubs"
+    ],
+    "post-update-cmd": [
+      "LanguageServer\\ComposerScripts::parseStubs"
+    ]
   }
 }

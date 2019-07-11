@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "4596bf0acfa0d897820472ffac1856d1",
+    "hash": "2d961de892f5a4c9a1fe5a1fbe81ecff",
     "content-hash": "1ec03a0a090c68723147e6d5d89e1320",
     "packages": [
         {
@@ -217,12 +217,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/JetBrains/phpstorm-stubs.git",
-                "reference": "c933cede494eca3702c182dad402fd3325e71468"
+                "reference": "ea81f1a055a2d7d52f7df497cf3f274f8fe10253"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/JetBrains/phpstorm-stubs/zipball/c933cede494eca3702c182dad402fd3325e71468",
-                "reference": "c933cede494eca3702c182dad402fd3325e71468",
+                "url": "https://api.github.com/repos/JetBrains/phpstorm-stubs/zipball/ea81f1a055a2d7d52f7df497cf3f274f8fe10253",
+                "reference": "ea81f1a055a2d7d52f7df497cf3f274f8fe10253",
                 "shasum": ""
             },
             "require-dev": {
@@ -253,20 +253,20 @@
                 "stubs",
                 "type"
             ],
-            "time": "2019-06-28 09:33:15"
+            "time": "2019-07-10 11:41:18"
         },
         {
             "name": "microsoft/tolerant-php-parser",
-            "version": "v0.0.17",
+            "version": "v0.0.18",
             "source": {
                 "type": "git",
-                "url": "https://github.com/Microsoft/tolerant-php-parser.git",
-                "reference": "89386de8dec9c004c8ea832692e236c92f34b542"
+                "url": "https://github.com/microsoft/tolerant-php-parser.git",
+                "reference": "e255aa978b45729094da2a1a6f9954044a244ff2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Microsoft/tolerant-php-parser/zipball/89386de8dec9c004c8ea832692e236c92f34b542",
-                "reference": "89386de8dec9c004c8ea832692e236c92f34b542",
+                "url": "https://api.github.com/repos/microsoft/tolerant-php-parser/zipball/e255aa978b45729094da2a1a6f9954044a244ff2",
+                "reference": "e255aa978b45729094da2a1a6f9954044a244ff2",
                 "shasum": ""
             },
             "require": {
@@ -294,20 +294,20 @@
                 }
             ],
             "description": "Tolerant PHP-to-AST parser designed for IDE usage scenarios",
-            "time": "2019-03-09 19:24:59"
+            "time": "2019-07-01 02:21:00"
         },
         {
             "name": "netresearch/jsonmapper",
-            "version": "v1.4.0",
+            "version": "v1.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cweiske/jsonmapper.git",
-                "reference": "3868fe1128ce1169228acdb623359dca74db5ef3"
+                "reference": "047dafe26facbba1e997e9fb3b3c298562d75a0b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cweiske/jsonmapper/zipball/3868fe1128ce1169228acdb623359dca74db5ef3",
-                "reference": "3868fe1128ce1169228acdb623359dca74db5ef3",
+                "url": "https://api.github.com/repos/cweiske/jsonmapper/zipball/047dafe26facbba1e997e9fb3b3c298562d75a0b",
+                "reference": "047dafe26facbba1e997e9fb3b3c298562d75a0b",
                 "shasum": ""
             },
             "require": {
@@ -336,7 +336,7 @@
                 }
             ],
             "description": "Map nested JSON structures onto PHP classes",
-            "time": "2017-11-28 21:30:01"
+            "time": "2019-07-08 18:46:43"
         },
         {
             "name": "phpdocumentor/reflection-common",
