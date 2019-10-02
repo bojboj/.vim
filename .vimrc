@@ -1,7 +1,3 @@
-" Load vim default.
-unlet! skip_defaults_vim
-silent! source $VIMRUNTIME/defaults.vim
-
 " ====================================================================================================
 " VIM-PLUG SETUP
 " ====================================================================================================
@@ -14,6 +10,7 @@ Plug 'airblade/vim-gitgutter'                                   " Git support in
 Plug 'tpope/vim-fugitive'                                       " Git wrapper.
 Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all'} " Fuzzy finder.
 Plug 'junegunn/fzf.vim'                                         " FZF commands for vim.
+Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}     " Asynchronous completion.
 Plug 'w0rp/ale'                                                 " Asynchronous lint engine and language server client.
 
 " Visual.
@@ -53,6 +50,9 @@ let NERDTreeIgnore=['\.swp', '\.git$', '.DS_Store', 'Thumbs.db', 'desktop.ini']
 nnoremap <silent> <Leader>n :NERDTreeToggle<CR>
 nnoremap <silent> <Leader>t :NERDTreeFind<CR>
 
+" deoplete
+let g:deoplete#enable_at_startup=1
+
 " Ale.
 set completeopt=menu,menuone,noselect,noinsert " Fix autocomplete behavior.
 set omnifunc=ale#completion#OmniFunc
@@ -83,21 +83,19 @@ nnoremap <silent> [x :ALEPrevious<CR>
 " GENERAL SETUP
 " ====================================================================================================
 set hidden                   " Enabled buffer to be hidden.
-set autoread                 " Autoload file changes that was done outside of vim.
 set number                   " Enabled number line.
-set hlsearch                 " Highlight searched pattern.
 set ignorecase               " Ignore case when searching.
 set smartcase                " Case sensitive if searching with uppercase.
 set nowrap                   " No word wraping.
 set updatetime=1000          " 1 second update time for plugins and events that rely on it.
 set clipboard=unnamed        " Allow clipboard copy and paste.
-set dir=~/.vimtmp            " Put *.swp files into .vimtmp directory.
-set viminfo^=!               " Viminfo settings.
+set mouse=a                  " Mouse support.
+set scrolloff=5              " Show a few lines of context around the cursor.
 
-" Change cursor when in insert mode.
-let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-let &t_SR = "\<Esc>]50;CursorShape=2\x7"
-let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+if executable('rg')
+    set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
+    set grepformat=%f:%l:%c:%m
+endif
 
 " Fix syntax highlight.
 nnoremap <Leader>z :syntax sync fromstart<CR>
