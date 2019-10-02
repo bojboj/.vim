@@ -2,10 +2,10 @@
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
-    "eslint": "",
+    "eslint": "^6.4.0",
     "eslint-plugin-html": "",
     "htmlhint": "",
     "jsonlint": "",
-    "less": ""
+    "less": "^3.10.3"
   }
 }
