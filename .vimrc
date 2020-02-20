@@ -93,16 +93,7 @@ set updatetime=1000          " 1 second update time for plugins and events that 
 set clipboard=unnamed        " Allow clipboard copy and paste.
 set dir=~/.vimtmp            " Put *.swp files into .vimtmp directory.
 set viminfo^=!               " Viminfo settings.
-
-" Change cursor when in insert mode.
-let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-let &t_SR = "\<Esc>]50;CursorShape=2\x7"
-let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-
-if executable('rg')
-    set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
-    set grepformat=%f:%l:%c:%m
-endif
+set mouse=a                  " Mouse support.
 
 " Fix syntax highlight.
 nnoremap <Leader>z :syntax sync fromstart<CR>

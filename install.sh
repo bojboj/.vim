@@ -1,20 +1,34 @@
 #!/bin/sh
 
-echo "Installing composer packages."
-composer install
-echo ""
+if [ -x "`command -v composer`" ]; then
+    echo "Installing composer packages."
+    composer install
+else
+    echo "composer is not available. skipping composer packages."
+fi
 
-echo "Installing npm packages."
-npm install
-echo ""
+if [ -x "`command -v npm`" ]; then
+    echo "Installing npm packages."
+    npm install
+else
+    echo "npm is not available. skipping npm packages."
+fi
 
 cd ~
+
+if [ -d .vimtmp ]; then
+    mv .vimtmp .vimtmp-old
+fi
 mkdir .vimtmp
 
-rm .vimrc
+if [ -f .vimrc ]; then
+    mv .vimrc .vimrc-old
+fi
 ln -s .vim/.vimrc .vimrc
 
-rm .editorconfig
+if [ -f .editorconfig ]; then
+    mv .editorconfig .editorconfig-old
+fi
 ln -s .vim/.editorconfig .editorconfig
 
 echo "Successfully set up vim."
