@@ -88,14 +88,9 @@ set ignorecase               " Ignore case when searching.
 set smartcase                " Case sensitive if searching with uppercase.
 set nowrap                   " No word wraping.
 set updatetime=1000          " 1 second update time for plugins and events that rely on it.
-set clipboard=unnamed        " Allow clipboard copy and paste.
+set clipboard=unnamedplus    " Allow clipboard copy and paste.
 set mouse=a                  " Mouse support.
 set scrolloff=5              " Show a few lines of context around the cursor.
-
-if executable('rg')
-    set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
-    set grepformat=%f:%l:%c:%m
-endif
 
 " Fix syntax highlight.
 nnoremap <Leader>z :syntax sync fromstart<CR>
